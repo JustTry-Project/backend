@@ -8,9 +8,9 @@ RUN npm install
 
 COPY ./ /app/
 
-ARG TARGET=ng-deploy
+ARG TARGET=serve
 
-RUN npm run serve
+RUN npm run ${TARGET}
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
 FROM nginx:1.13
